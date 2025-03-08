@@ -6,6 +6,17 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+/**
+ * Renders a full-page layout with navigation, social links, content area, and footer.
+ *
+ * The Layout component provides a consistent page structure. It displays a navigation bar,
+ * social links, and any nested content passed via the children prop. The footer includes
+ * a business description, contact information, and legal links, along with a copyright notice.
+ * Tailwind CSS classes ensure responsive styling, and the ScrollReveal component adds an animated
+ * reveal effect to the footer.
+ *
+ * @param children - The content to be displayed within the layout.
+ */
 export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen">

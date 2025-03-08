@@ -18,6 +18,16 @@ interface StaffSelectorProps {
   onSelectStaff: (staffId: string | undefined) => void;
 }
 
+/**
+ * Renders a staff selection UI for a given service.
+ *
+ * This component fetches and displays a list of staff members associated with the provided service ID. While fetching, a loading spinner is shown. If no staff are available, an informational message is displayed. Clicking on a staff member toggles the selection and triggers the supplied callback with the selected staff ID or undefined if deselected.
+ *
+ * @param serviceId - The unique identifier of the service for which staff members are retrieved.
+ * @param onSelectStaff - Callback invoked with the staff ID when a selection is made, or undefined if the selection is cleared.
+ *
+ * @returns A React element rendering the staff selector interface.
+ */
 export function StaffSelector({ serviceId, onSelectStaff }: StaffSelectorProps) {
   const [selectedStaffId, setSelectedStaffId] = useState<string | undefined>(undefined);
 

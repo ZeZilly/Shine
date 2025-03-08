@@ -11,6 +11,21 @@ interface OptimizedImageProps {
   placeholder?: string;
 }
 
+/**
+ * Renders an image that initially displays a placeholder and transitions to the actual image with a fade-in effect.
+ *
+ * The component shows a placeholder image until the main image specified by the `src` prop is fully loaded. Once loaded, it updates to the actual image and applies a smooth opacity transition. It also supports lazy loading and custom styling via CSS classes.
+ *
+ * @param src - The URL of the main image.
+ * @param alt - The alternative text for the image.
+ * @param className - Additional CSS classes for custom styling.
+ * @param width - The width of the image.
+ * @param height - The height of the image.
+ * @param loading - The loading behavior ("lazy" or "eager"). Defaults to "lazy".
+ * @param placeholder - The placeholder image source displayed until the main image loads. Defaults to a blank SVG.
+ *
+ * @returns A React element rendering the optimized image.
+ */
 export function OptimizedImage({
   src,
   alt,

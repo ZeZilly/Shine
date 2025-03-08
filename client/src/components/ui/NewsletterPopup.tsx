@@ -23,6 +23,12 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+/**
+ * Renders a newsletter subscription popup for email subscriptions.
+ *
+ * The component displays a popup with an email subscription form after a 3-second delay if it hasn't been dismissed before (as tracked via localStorage). 
+ * It leverages React Hook Form with Zod for form validation and React Query to handle the subscription API request. On successful submission, it shows a success toast, closes the popup, and records the dismissal in localStorage; on failure, it displays an error toast. The popup is animated using Framer Motion and can be manually closed via a dedicated close button.
+ */
 export function NewsletterPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();

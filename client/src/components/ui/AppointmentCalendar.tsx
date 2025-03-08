@@ -18,6 +18,15 @@ interface AppointmentCalendarProps {
   staffId?: string;
 }
 
+/**
+ * Renders a calendar interface for selecting an appointment date and time.
+ *
+ * When a date is chosen, the component fetches available time slots (omitting past dates and Sundays) for the specified service and, optionally, staff member. Selecting an available time slot triggers the provided callback with a Date object (combining the selected date and time) and the time string.
+ *
+ * @param onSelectDateTime - Callback invoked with the appointment date and time when a time slot is selected.
+ * @param serviceId - Identifier used to retrieve available time slots for the service.
+ * @param staffId - Optional identifier to filter available time slots by a specific staff member.
+ */
 export function AppointmentCalendar({ 
   onSelectDateTime, 
   serviceId,

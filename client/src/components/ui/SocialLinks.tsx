@@ -1,6 +1,13 @@
 import { SiInstagram, SiWhatsapp } from "react-icons/si";
 import { motion } from "framer-motion";
 
+/**
+ * Renders a fixed-position sidebar with animated social media links.
+ *
+ * This component displays two rounded, clickable links—one for Instagram and one for WhatsApp.
+ * Each link is animated using framer-motion to scale on hover and tap interactions, enhancing
+ * the user experience. The sidebar is vertically centered and fixed to the right side of the viewport.
+ */
 export function SocialLinks() {
   return (
     <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">

@@ -2,6 +2,11 @@ import { ParallaxImage } from "../ui/ParallaxImage";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
+/**
+ * Renders a full-screen Hero section with a parallax background, animated text, and a booking link.
+ *
+ * This component displays a section that occupies the entire viewport, featuring a parallax image with a semi-transparent black overlay. It centers animated content—including a heading, descriptive text, and an interactive link—to guide users to the appointment booking page.
+ */
 export function Hero() {
   return (
     <section className="relative h-screen overflow-hidden">

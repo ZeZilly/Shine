@@ -12,6 +12,13 @@ const menuItems = [
   { href: "/kosullar", label: "Kullanım Koşulları" }
 ];
 
+/**
+ * Renders a responsive navigation bar with both desktop and mobile layouts.
+ *
+ * The navigation bar is fixed at the top of the viewport and includes a clickable logo that links to the home page,
+ * a horizontal list of navigation links for desktop screens, and a toggleable mobile menu for smaller screens.
+ * The mobile menu features smooth animations for its appearance and disappearance using Framer Motion.
+ */
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 

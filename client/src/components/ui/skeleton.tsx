@@ -1,5 +1,12 @@
 import { cn } from "@/lib/utils"
 
+/**
+ * Renders a skeleton loader as a styled div element.
+ *
+ * This component displays a pulsing placeholder with rounded corners and a muted background,
+ * making it ideal for indicating content that is loading. Any additional CSS classes and HTML attributes
+ * provided are merged with the default styling.
+ */
 function Skeleton({
   className,
   ...props

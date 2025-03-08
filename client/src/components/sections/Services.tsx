@@ -19,6 +19,11 @@ const services = [
   }
 ];
 
+/**
+ * Renders a section showcasing beauty treatment services.
+ *
+ * This component displays a header and a responsive grid of service cards. Each card includes an image, title, and description, and is wrapped in an animated ScrollReveal component with a staggered delay.
+ */
 export function Services() {
   return (
     <section className="py-20 px-4 bg-gray-50">
