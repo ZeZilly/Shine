@@ -1,0 +1,1 @@
+import{j as t}from"./index-pkZhddLw.js";import{C as o}from"./Contact-Doah_t_H.js";import"./textarea-DqesEHUN.js";function m(){return t.jsx("main",{className:"pt-16",children:t.jsx(o,{})})}export{m as default};
