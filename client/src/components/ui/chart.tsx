@@ -24,6 +24,15 @@ type ChartContextProps = {
 
 const ChartContext = React.createContext<ChartContextProps | null>(null)
 
+/**
+ * Retrieves the current chart configuration context.
+ *
+ * This hook accesses the ChartContext set by <ChartContainer /> and returns its value.
+ * It ensures that the context is available, otherwise it throws an error to prevent misuse.
+ *
+ * @returns The chart configuration context.
+ * @throws {Error} When called outside of a <ChartContainer />, indicating that the context is not available.
+ */
 function useChart() {
   const context = React.useContext(ChartContext)
 
@@ -316,7 +325,20 @@ const ChartLegendContent = React.forwardRef<
 )
 ChartLegendContent.displayName = "ChartLegend"
 
-// Helper to extract item config from a payload.
+/**
+ * Retrieves a configuration value from the chart configuration using a key that may be overridden by a payload.
+ *
+ * The function checks if the provided payload is a valid object. It first looks for a string value corresponding to the given key on 
+ * the payload object; if not found, it then checks within a nested "payload" property. If an override key is found in either case, 
+ * that key is used to extract a value from the configuration. If the override is missing or the key is not present in the configuration, 
+ * the function falls back to the original key.
+ *
+ * @param config - Chart configuration mapping keys to their configuration values.
+ * @param payload - Data payload that may contain an override for the lookup key.
+ * @param key - Default key to use for retrieving the configuration.
+ *
+ * @returns The configuration value associated with the derived key, or undefined if the payload is not a valid object.
+ */
 function getPayloadConfigFromPayload(
   config: ChartConfig,
   payload: unknown,
@@ -377,6 +399,20 @@ interface ChartProps {
   width?: number
 }
 
+/**
+ * Renders a Chart.js chart on a responsive canvas element.
+ *
+ * This component initializes a new Chart.js instance with the given chart type, data, and options.
+ * It destroys any existing chart instance before creating a new one and cleans up on unmount to prevent memory leaks.
+ *
+ * @param type - The type of chart to render (e.g., 'line', 'bar', 'pie').
+ * @param data - The data object containing datasets and labels for the chart.
+ * @param options - Additional Chart.js configuration options. Defaults are merged with responsive settings.
+ * @param height - The height of the chart container in pixels. Defaults to 300.
+ * @param width - The intended width of the chart container in pixels; note that the container's width is set to 100%.
+ *
+ * @returns A React element containing a canvas for rendering the chart.
+ */
 export function ChartComponent({ type, data, options = {}, height = 300, width = 500 }: ChartProps) {
   const chartRef = useRef<HTMLCanvasElement>(null)
   const chartInstance = useRef<Chart | null>(null)

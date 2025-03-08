@@ -19,6 +19,13 @@ const images = [
   }
 ];
 
+/**
+ * Renders a responsive gallery section with animated images.
+ *
+ * The component displays a "Our Gallery" heading wrapped in a scroll reveal for animation, followed by a responsive
+ * grid that presents a series of images. Each image appears with a delayed reveal effect and features a scaling
+ * transition on hover for enhanced visual interactivity.
+ */
 export function Gallery() {
   return (
     <section className="py-20 px-4">

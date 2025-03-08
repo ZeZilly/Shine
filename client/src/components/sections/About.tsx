@@ -1,5 +1,12 @@
 import { ScrollReveal } from "../ui/ScrollReveal";
 
+/**
+ * Renders the About section with an image and descriptive text for a beauty center.
+ *
+ * The component displays a two-column layout using a responsive grid:
+ * - The left column presents an image with a scroll reveal animation from the left.
+ * - The right column contains a heading and two paragraphs providing details about the beauty center and its working hours, animated from the right.
+ */
 export function About() {
   return (
     <section className="py-20 px-4">

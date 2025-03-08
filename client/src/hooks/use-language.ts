@@ -48,6 +48,16 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+/**
+ * Provides a context for managing and accessing the application's language settings.
+ *
+ * This component initializes the language from local storage (defaulting to Turkish) and updates both
+ * local storage and the document's language attribute whenever the language changes. It also supplies
+ * a translation function that returns the translation for a given key based on the active language,
+ * defaulting to the key itself if no translation is available.
+ *
+ * @param children - The React elements that will have access to the language context.
+ */
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>(
     () => (localStorage.getItem("language") as Language) || "tr"
@@ -69,6 +79,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * Returns the current language context.
+ *
+ * This hook provides access to the language setting, a function to update it, and a translation function
+ * that retrieves localized strings based on the current language. It must be used within a LanguageProvider;
+ * otherwise, an error is thrown.
+ *
+ * @throws {Error} If the hook is invoked outside a LanguageProvider.
+ * @returns The current language context.
+ */
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {

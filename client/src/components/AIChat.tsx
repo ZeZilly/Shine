@@ -3,6 +3,16 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 
+/**
+ * A React component providing a chat interface for interacting with an AI assistant.
+ *
+ * This component manages chat messages along with the user's input and loading state. When a message is sent,
+ * it updates the chat with the user's message, clears the input, and sends a POST request to the /api/chat endpoint.
+ * The assistant's reply is then added to the chat. If the API call fails, an error is logged and an error message is displayed.
+ *
+ * The UI is structured as a card containing a header with the title "AI Asistanı", a scrollable area for 
+ * displaying messages styled by role, and a footer with an input field and a send button.
+ */
 export function AIChat() {
   const [messages, setMessages] = useState<{role: 'user' | 'assistant', content: string}[]>([]);
   const [input, setInput] = useState('');

@@ -1,6 +1,18 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { storage } from "../../server/storage";
 
+/**
+ * Handles appointment API requests by processing OPTIONS, GET, and POST methods.
+ *
+ * - OPTIONS: Returns a 200 status for CORS preflight requests.
+ * - GET: Validates the "date" query parameter and retrieves appointments for the provided date, optionally filtered by a staff identifier.
+ * - POST: Validates required fields in the request body (name, email, service, appointmentDate), creates or updates a user, and schedules a new appointment.
+ *
+ * Responds with appropriate HTTP statuses:
+ * - 400 for missing or invalid parameters.
+ * - 500 for internal server errors.
+ * - 405 for unsupported HTTP methods.
+ */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');

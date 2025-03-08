@@ -15,6 +15,13 @@ const testimonials = [
   }
 ];
 
+/**
+ * Renders a testimonials section with animated testimonial cards.
+ *
+ * This component displays a section with a heading and a responsive grid layout of testimonial cards. Each card presents a client's avatar (with an initials fallback), name, and testimonial text. The ScrollReveal component is used to animate the section title and each testimonial card with a staggered delay.
+ *
+ * @returns A JSX element representing the testimonials section.
+ */
 export function Testimonials() {
   return (
     <section className="py-20 px-4 bg-gray-50">

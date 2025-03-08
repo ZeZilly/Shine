@@ -17,6 +17,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "../ui/ScrollReveal";
 
+/**
+ * Renders a contact form for user inquiries.
+ *
+ * This component leverages react-hook-form with a Zod schema for validation and manages form submission using a mutation from @tanstack/react-query. On form submission, it posts the form data to the "/api/contact" endpoint, displaying a success toast and resetting the form upon success or an error toast if the submission fails.
+ *
+ * The form includes fields for name, email, phone, and message, each integrated with custom UI components to ensure consistent styling and validation feedback. ScrollReveal is used to animate the appearance of the section's elements.
+ */
 export function Contact() {
   const { toast } = useToast();
   const form = useForm<InsertContact>({

@@ -7,6 +7,17 @@ import { buttonVariants } from "@/components/ui/button"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
+/**
+ * Renders a calendar interface using DayPicker from react-day-picker.
+ *
+ * This component wraps the DayPicker, applying predefined layout styles and custom navigation icons.
+ * It combines a base padding class with any additional styles provided via the `className` and
+ * `classNames` props, and it forwards all other props to the underlying DayPicker. By default, it
+ * displays days from adjacent months (controlled by the `showOutsideDays` prop).
+ *
+ * @example
+ * <Calendar showOutsideDays={false} className="custom-calendar" />
+ */
 function Calendar({
   className,
   classNames,

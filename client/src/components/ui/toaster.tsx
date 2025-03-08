@@ -8,6 +8,16 @@ import {
   ToastViewport,
 } from "@/components/ui/toast"
 
+/**
+ * Renders a toast notification container.
+ *
+ * Retrieves the current list of toast notifications via the `useToast` hook and displays each
+ * notification using the `Toast` component. Each toast may display a title, description, and an
+ * optional action, and includes a close button provided by `ToastClose`. The `ToastViewport` defines
+ * the area where the toast notifications are shown.
+ *
+ * @returns A JSX element containing the toast notification provider and the active toasts.
+ */
 export function Toaster() {
   const { toasts } = useToast()
 

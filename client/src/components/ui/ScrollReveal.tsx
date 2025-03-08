@@ -7,6 +7,22 @@ interface ScrollRevealProps {
   delay?: number;
 }
 
+/**
+ * Animates its children into view when they become visible in the viewport.
+ *
+ * This component uses the framer-motion library to apply a fade-in and directional translation effect
+ * as its content scrolls into view. The animation triggers only once when the element is within a -100px margin,
+ * with the initial offset determined by the specified direction.
+ *
+ * @param children - The React nodes to animate.
+ * @param direction - The direction from which the content animates. Accepted values are "up", "down", "left", or "right". Defaults to "up".
+ * @param delay - The delay, in seconds, before the animation starts. Defaults to 0.
+ *
+ * @example
+ * <ScrollReveal direction="left" delay={0.5}>
+ *   <div>Animated Content</div>
+ * </ScrollReveal>
+ */
 export function ScrollReveal({ 
   children, 
   direction = "up",

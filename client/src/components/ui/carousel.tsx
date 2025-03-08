@@ -30,6 +30,15 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
+/**
+ * Retrieves the carousel context from the nearest Carousel provider.
+ *
+ * This hook returns the carousel context containing state and methods for carousel functionality.
+ * It must be invoked within a Carousel component; otherwise, it throws an error.
+ *
+ * @returns The carousel context object.
+ * @throws {Error} If the hook is used outside of a Carousel provider.
+ */
 function useCarousel() {
   const context = React.useContext(CarouselContext)
 
